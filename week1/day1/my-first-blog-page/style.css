@@ -1,0 +1,49 @@
+
+body {
+  margin: 0;
+  background-image: url(assets/DSC_3244.JPG);
+  background-size: cover;
+}
+header {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: gray;
+}
+h1, h2, p {
+  margin-left: 10vw;
+}
+textarea, li {
+  border: 1px solid;
+  margin-left: 10vw;
+}
+textarea {
+  background: 	#E8E8E8;
+  border-radius: 5px;
+}
+button {
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 10vw;
+  padding-left: 10px,
+  padding-right: 10px;
+}
+button:hover {
+  background-color:beige;
+  animation-delay: 2sec;
+}
+li {
+  margin-top: 10px;
+  text-align: left;
+  padding: 10px;
+  margin-left: 7vw;
+  margin-right: 10vw;
+  list-style-type: none;
+  border-radius: 5px;
+  border-color: azure;
+  color: beige;
+}
+h3{
+  font-size: 24px;
+  margin-left: 0vw;
+}
