@@ -11,7 +11,7 @@ public class ParametricAverage {
             arra[i] = keyboard.nextInt();
             System.out.println("One more number please!");
         }
-        
+
     }
 }
 // Write a program that asks for a number.
