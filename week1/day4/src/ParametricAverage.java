@@ -6,10 +6,13 @@ public class ParametricAverage {
         System.out.println("Number please!");
         int a = keyboard.nextInt();
         for (int i = 0; i < a; i++){
+            int arra[] = new int [a];
+            arra[0] = a;
             Scanner keyboard1 = new Scanner(System.in);
             System.out.println("Number please!");
             int n = keyboard1.nextInt();
-            System.out.println(a+n);
+            arra[0+1] =n;
+            System.out.println(arra);
         }
     }
 
