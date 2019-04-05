@@ -1,10 +1,15 @@
+import java.util.Scanner;
+
 public class DrawSquare {
     public static void main(String[] args) {
-        int a = 5;
-        for (int i = 0; i <= a; i++) {
-            if (i > 0 && i < a) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter number=");
+        int n = s.nextInt();
+        for (int i = 0; i <= n; i++) {
+            if (i > 0 && i < n) {
                 System.out.println("%     %");
-            } else {
+            }
+            else {
                 System.out.println("%%%%%%%");
             }
         }

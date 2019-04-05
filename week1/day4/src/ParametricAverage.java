@@ -1,15 +1,17 @@
 import java.util.Scanner;
 
 public class ParametricAverage {
-    public static void main(String[] Args){
+    public static void main(String[] Args) {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Number please!");
         int a = keyboard.nextInt();
-        for (int i = 0; i < a; i++){
-            Scanner keyboard1 = new Scanner(System.in);
+        int[] arra = new int[a];
+        int sum = 0;
+        for (int i = 0; i < a; i++) {
+            arra[i] = keyboard.nextInt();
             System.out.println("One more number please!");
-            int n = keyboard1.nextInt();
         }
+        
     }
 }
 // Write a program that asks for a number.
