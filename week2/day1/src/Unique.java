@@ -6,10 +6,10 @@ public class Unique {
         System.out.println(unique(array));
 
     }
-    public static int[] unique(int[] arr, int a){
+    public static int[] unique(int[] arr){
         Arrays.sort(arr);
-        return arr;
 
+        return arr;
     }
 
 
