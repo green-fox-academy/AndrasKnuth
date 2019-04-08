@@ -11,6 +11,6 @@ public class Doubling {
     }
 
     public static int doubling(int a) {
-        return a * 2;
+    return a * 2;
     }
 }
