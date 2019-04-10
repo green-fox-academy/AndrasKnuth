@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class CenterBoxFunction {
 
     public static void mainDraw(Graphics graphics) {
-        square(graphics);
+
 
         // create a square drawing function that takes 2 parameter:
         // the square size and the graphics

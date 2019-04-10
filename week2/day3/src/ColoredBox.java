@@ -9,10 +9,13 @@ public class ColoredBox {
         graphics.setColor(Color.blue);
         graphics.fillRect(30, 30 , 50 , 50);
         graphics.setColor(Color.red);
-        int xpoints[] = {30, 80, 80, 30, 30};
-        int ypoints[] = {30, 30, 80, 80, 30};
-        int npoints = 5;
-        graphics.drawPolygon(xpoints, ypoints, npoints);
+        graphics.drawLine(30, 30, 80, 30);
+        graphics.setColor(Color.green);
+        graphics.drawLine(80, 30, 80, 80);
+        graphics.setColor(Color.pink);
+        graphics.drawLine(80, 80, 30, 80);
+        graphics.setColor(Color.yellow);
+        graphics.drawLine(30, 80, 30, 30);
         // Draw a box that has different colored lines on each edge.
 
 

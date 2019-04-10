@@ -16,9 +16,16 @@ public class PurpleSteps3D {
             x = x*2;
             y = y*2;
             size = size*2;
-
         }
-
+        int a = 10;
+        int b = 10;
+        int size1 = 10;
+        for (int i = 1; i < 6; i++){
+            graphics.drawRect(a, b, size1, size1);
+            a = a*2;
+            b = b*2;
+            size1 = size1*2;
+        }
 
 
 
