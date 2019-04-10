@@ -4,27 +4,16 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+public class ConnectTheDots {
     public static void mainDraw(Graphics graphics) {
-        for (int i = 0; i < 16; i++){
-            for (int j = 0; j < 16; j++){
-                line(graphics, 20*j, 0);
-                line(graphics, 0, 20*j);
-            }
-            line(graphics,320, 20*i);
-            line(graphics,20*i, 320);
-        }
-        // Create a line drawing function that takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a line from that point to the center of the canvas.
-        // Fill the canvas with lines from the edges, every 20 px, to the center.
-
-
-
+        // Create a function that takes 2 parameters:
+        // An array of {x, y} points and graphics
+        // and connects them with green lines.
+        // Connect these to get a box: {{10, 10}, {290,  10}, {290, 290}, {10, 290}}
+        // Connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
+        // {120, 100}, {85, 130}, {50, 100}}
     }
-    public static void line(Graphics graphics, int x, int y) {
-        graphics.drawLine(x, y, WIDTH/2, HEIGHT/2);
-    }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
