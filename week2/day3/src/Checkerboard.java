@@ -4,23 +4,24 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class CenterBoxFunction {
-
+public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
-        for (int i = 0; i < 3; i++){
-            square(graphics, 40*i+20);
+
+        int row;
+        int col;
+        int x,y;
+
+        for ( row = 0;  row < 8;  row++ ) {
+            for ( col = 0;  col < 8;  col++) {
+                x = col * 20;
+                y = row * 20;
+                if ( (row % 2) == (col % 2) )
+                    graphics.setColor(Color.black);
+                else
+                    graphics.setColor(Color.white);
+                graphics.fillRect(x, y, 20, 20);
+            }
         }
-        // create a square drawing function that takes 2 parameter:
-        // the square size and the graphics
-        // and draws a square of that size to the center of the canvas.
-        // draw 3 squares with that function.
-        // avoid code duplication.
-
-
-    }
-
-    public static void square(Graphics graphics, int size) {
-        graphics.drawRect(160-size/2, 160-size/2, size, size);
     }
         // Don't touch the code below
         static int WIDTH = 320;

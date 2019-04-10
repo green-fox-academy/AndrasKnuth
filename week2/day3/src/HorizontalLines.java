@@ -6,20 +6,14 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class HorizontalLines {
     public static void mainDraw(Graphics graphics) {
-        int max = 320;
-        int min = 1;
-        int range = max - min + 1;
-        int n = 3;
-        for (int i = 0; i < n; i++) {
-            int rand = (int) (Math.random() * range) + min;
-            int rand2 = (int) (Math.random() * range) + min;
-            graphics.drawLine(rand, rand2, rand+50,rand2);
+        for (int i = 0; i < 3; i++) {
+            horizontal(graphics, 40*i, 60*i);
         }
     }
-        // Create a line drawing function that takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a 50 long horizontal line from that point.
-        // Draw 3 lines with that function. Use loop for that.
+    public static void horizontal(Graphics graphics, int x, int y){
+        graphics.drawLine(x, y, x+50, y);
+    }
+
 
 
 
