@@ -1,34 +1,31 @@
 import javax.swing.*;
-
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
 public class FunctionToCenter {
     public static void mainDraw(Graphics graphics) {
-        for (int i = 0; i < 16; i++){
-            for (int j = 0; j < 16; j++){
-                line(graphics, 20*j, 0);
-                line(graphics, 0, 20*j);
+        graphics.fillRect(0, 0, 640, 640);
+        graphics.setColor(Color.yellow);
+        for (int i = 0; i < 32; i++) {
+            for (int j = 0; j < 32; j++) {
+                line(graphics, 20 * j, 0);
+                line(graphics, 0, 20 * j);
             }
-            line(graphics,320, 20*i);
-            line(graphics,20*i, 320);
+            line(graphics,640, 20 * i);
+            line(graphics,20 * i, 640);
         }
-        // Create a line drawing function that takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a line from that point to the center of the canvas.
-        // Fill the canvas with lines from the edges, every 20 px, to the center.
-
-
-
     }
+
     public static void line(Graphics graphics, int x, int y) {
-        graphics.drawLine(x, y, WIDTH/2, HEIGHT/2);
+        graphics.drawLine(x, y, WIDTH / 2, HEIGHT / 2);
     }
+    // Create a line drawing function that takes 3 parameters:
+    // The x and y coordinates of the line's starting point and the graphics
+    // and draws a line from that point to the center of the canvas.
+    // Fill the canvas with lines from the edges, every 20 px, to the center.
 
-    // Don't touch the code below
-    static int WIDTH = 320;
-    static int HEIGHT = 320;
+    // Don't touch this...
+    static int WIDTH = 640;
+    static int HEIGHT = 640;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
