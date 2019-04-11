@@ -4,18 +4,16 @@ public class Strings {
     }
 
     public static String Strings(String s, char from, char to) {
-        StringBuffer result = new StringBuffer(s.length());
-
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == from) {
-                result.append(to);
-            } else {
-                result.append(s.charAt(i));
-            }
+        if (s.length() < 1) {
+            return s;
         }
-        return result.toString();
+        else {
+            char first = from == s.charAt(0) ? to : s.charAt(0);
+            return first + Strings(s.substring(1), from, to);
+        }
     }
-}
+    }
+
 
 //Given a string, compute recursively (no loops) a new string
 //public static String Strings(String x, char y){
