@@ -1,6 +1,6 @@
 public class Strings {
     public static void main(String[] args) {
-        System.out.println(strings("XXXXXXXxxxxxxx"));
+        System.out.println(strings("Hello kenny, x-edik lettel!"));
     }
 
     public static String strings(String text) {
@@ -11,7 +11,7 @@ public class Strings {
         if (positionX == -1) {
             return text;
         } else {
-            letters[positionX] = 'y';
+            letters[positionX] = text;
             String xtext = new String(letters);
             return strings(xtext);
         }
