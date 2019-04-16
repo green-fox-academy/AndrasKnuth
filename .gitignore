@@ -17,9 +17,6 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Directory #
-greenfox/AndrasKnuth/week3/day2/assets
-
 # Package Files #
 *.jar
 *.war
