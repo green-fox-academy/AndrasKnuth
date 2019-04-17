@@ -14,14 +14,25 @@ public class Main {
         Pokemon wildPokemon = new Pokemon("Oddish", "leaf", "water");
 
         // Which pokemon should Ash use?
-        public Pokemon callPokemon (wildPokemon){
-            for (){
+        Pokemon chosenPokemon;
+        for (Pokemon ashPokemon : pokemonOfAsh) {
 
+            if (ashPokemon.isEffectiveAgainst(wildPokemon)) {
+                chosenPokemon = ashPokemon;
+                System.out.print("I choose you, " + chosenPokemon.name);
             }
-            return Pokemon;
+
         }
 
-        System.out.print("I choose you, " callPokemon);
+        /*for (int i = 0; i < pokemonOfAsh.size(); i++) {
+            if (pokemonOfAsh.get(i).isEffectiveAgainst(wildPokemon)) {
+                chosenPokemon = ash;
+            }
+
+        }
+
+
+        System.out.print("I choose you, " + chosenPokemon.name);*/
     }
 
     private static List<Pokemon> initializePokemons() {
