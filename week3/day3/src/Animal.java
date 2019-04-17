@@ -1,9 +1,17 @@
 public class Animal {
-    int hunger;
-    int thirst;
+    int hunger = 50;
+    int thirst = 50;
 
-    public Animal(int huner, int thirst){}
-    public static 
+    public Animal(int hunger, int thirst){}
+    int eat (){
+        return hunger--;
+    }
+    int drink (int thirst){
+        return thirst--;
+    }
+    public int play (int hunger, int thirst){
+        return hunger++ + thirst++;
+    }
 }
 /*Create an Animal class
 Every animal has a hunger value, which is a whole number
