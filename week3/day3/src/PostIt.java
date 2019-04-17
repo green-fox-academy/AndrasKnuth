@@ -1,10 +1,14 @@
-import java.awt.*;
 
 public class PostIt {
-    String BackgroundColor = new Color(Color);
-    String 
+    String BackgroundColor;
+    String Text;
+    String TextColor;
 
+    public PostIt(String BackgroundColor, String Text, String TextColor) {
+    }
 }
+
+
 /*Create a PostIt class that has
 a backgroundColor
 a text on it
