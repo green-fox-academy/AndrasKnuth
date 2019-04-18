@@ -10,7 +10,12 @@ public class Blog {
     void add(BlogPost blogPost) {
         this.blogPosts.add(blogPost);
     }
-
+    void delete(int index) {
+        this.blogPosts.remove(index);
+    }
+    void update(int index, BlogPost blogPost) {
+        this.blogPosts.set(index, blogPost);
+    }
 }
 /*
 Create a Blog class which can
