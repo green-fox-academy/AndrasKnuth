@@ -28,7 +28,7 @@ public class Farm {
 
     public static void main(String[] args) {
         Farm newFarm = new Farm();
-        newFarm.breed(Animal animal1 = new Animal(50,50));
+        newFarm.breed();
 
     }
 }

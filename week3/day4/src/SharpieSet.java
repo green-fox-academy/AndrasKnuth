@@ -11,8 +11,6 @@ public class SharpieSet {
     void add(Sharpie sharpie){
         this.sharpieList.add(sharpie);
     }
-
-
     int countUsable() {
         int counter = 0;
         for (Sharpie sharpie : sharpieList) {
