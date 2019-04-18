@@ -10,7 +10,7 @@ public class Station {
         System.out.println(car.capacity);
 
     }
-    /* For testing:
+
     public static void main(String[] args) {
         Car superCar = new Car();
         Station theBestStation = new Station(100);
@@ -23,7 +23,7 @@ public class Station {
 
         System.out.println(theBestStation.gasAmount);
         System.out.println(superCar.gasAmount);
-    } */
+    }
 
 }
 /*Station:
