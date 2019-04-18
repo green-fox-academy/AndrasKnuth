@@ -1,7 +1,8 @@
 public class Student {
-    learn();
-    question(Teacher){
-        answer;
+    public Student(){}
+    void learn(){}
+    void question(Teacher teacher){
+        teacher.answer();
     }
 }
 

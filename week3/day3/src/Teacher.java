@@ -1,10 +1,13 @@
 public class Teacher {
-    teach(Student){
-        learn;
-    };
-    answer();
+    public Teacher(){}
+    void answer(){}
+    void teach(Student student){
+        student.learn();
+    }
 
 }
+
+
 
 
 
