@@ -22,6 +22,6 @@ public class BlogPost {
         blog.add(second);
         blog.delete(1);
         blog.update(0, second);
-        
+
     }
 }

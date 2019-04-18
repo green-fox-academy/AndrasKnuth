@@ -1,19 +1,27 @@
 public class Animal {
-    int hunger = 50;
-    int thirst = 50;
+    int hunger;
+    int thirst;
 
-    public Animal(int hunger, int thirst){}
-    int eat (){
-        return hunger--;
+    public Animal(int hunger, int thirst) {
+        this.hunger = hunger;
+        this.thirst = thirst;
     }
-    public int getHunger() {
-        return hunger;
+
+    private void eat () {
+        this.hunger--;
     }
-    int drink (int thirst){
-        return thirst--;
+    private void drink () {
+        this.thirst--;
     }
-    public int play (int hunger, int thirst){
-        return hunger++ + thirst++;
+    private void play () {
+        this.thirst--;
+        this.hunger--;
+    }
+
+
+    public static void main(String[] args) {
+        Animal dog = new Animal(50,50);
+        System.out.println(dog.hunger);
     }
 }
 /*Create an Animal class
