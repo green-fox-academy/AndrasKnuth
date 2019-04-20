@@ -4,7 +4,8 @@ import java.util.List;
 public class Farm {
     int slots;
     List<Animal> Animals;
-
+public static void Farm(int slots){
+}
 
     public void breed() {
         if (this.Animals.size() < slots) {
@@ -13,6 +14,13 @@ public class Farm {
         } else {
             System.out.println("The Farm is full");
         }
+    }
+    public static void main(String[] args) {
+        Farm newFarm = new Farm();
+        newFarm.slots = 45;
+        List<Animal> Animals;
+        newFarm.breed();
+
     }
 }
 

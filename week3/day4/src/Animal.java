@@ -7,22 +7,17 @@ public class Animal {
         this.thirst = thirst;
     }
 
-    private void eat () {
-        this.hunger--;
-    }
-    private void drink () {
-        this.thirst--;
-    }
-    private void play () {
-        this.thirst--;
-        this.hunger--;
-    }
+        private void eat () {
+            this.hunger--;
+        }
+        private void drink () {
+            this.thirst--;
+        }
+        private void play () {
+            this.thirst--;
+            this.hunger--;
+        }
 
-
-    public static void main(String[] args) {
-        Animal dog = new Animal(50,50);
-        System.out.println(dog.hunger);
-    }
 }
 /*Create an Animal class
 Every animal has a hunger value, which is a whole number
