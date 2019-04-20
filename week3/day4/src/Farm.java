@@ -7,12 +7,8 @@ public class Farm {
 
     public Farm(int slots){
     this.Animals = new ArrayList<>();
-    }
 
-    void add (Animal animal){
-        this.Animals.add(animal);
     }
-
 
     public void breed() {
         if (Animals.size() < slots) {
