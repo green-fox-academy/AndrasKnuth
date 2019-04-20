@@ -1,8 +1,8 @@
-import java.util.List;
+
 
 public class BlogPost {
-    private String authorName;
-    private String title;
+    public String authorName;
+    public String title; //Public, or make a getTitle method...
     private String text;
     private String duplicationDate;
 
@@ -23,5 +23,6 @@ public class BlogPost {
         blog.delete(1);
         blog.update(0, second);
         System.out.println(first.authorName);
+        System.out.println(second.duplicationDate);
     }
 }
