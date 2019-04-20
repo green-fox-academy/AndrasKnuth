@@ -1,25 +1,37 @@
+import java.util.ArrayList;
 import java.util.List;
-
 
 public class Farm {
     int slots;
     List<Animal> Animals;
-public static void Farm(int slots){
-}
+
+    public Farm(int slots){
+    this.Animals = new ArrayList<>();
+    }
+
+    void add (Animal animal){
+        this.Animals.add(animal);
+    }
+
 
     public void breed() {
-        if (this.Animals.size() < slots) {
-            this.Animals.add(new Animal(50, 50));
-            System.out.println("New animal made, now you have" + this.Animals.size());
+        if (Animals.size() < slots) {
+            Animals.add(new Animal(50, 50));
+            System.out.println("New animal made, now you have" + Animals.size());
         } else {
             System.out.println("The Farm is full");
         }
     }
     public static void main(String[] args) {
-        Farm newFarm = new Farm();
-        newFarm.slots = 45;
-        List<Animal> Animals;
+        Farm newFarm = new Farm(15);
+        List<Animal> allatok = new ArrayList<>();
+        Animal animal = new Animal(50,50);
+        allatok.add(0, animal);
+        allatok.add(1,animal);
+        allatok.add(2, animal);
+        System.out.println(allatok.size());
         newFarm.breed();
+        System.out.println(allatok.size());
 
     }
 }
@@ -34,13 +46,7 @@ public static void Farm(int slots){
         }
 
     }*/
-/*
-    public static void main(String[] args) {
-        Farm newFarm = new Farm();
-        newFarm.breed();
 
-    }
-}*/
 /*
 Reuse your Animal class
  - Create a Farm class
