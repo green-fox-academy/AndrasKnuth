@@ -1,47 +1,47 @@
 public class Pirate {
     int counter = 0;
     int drunkenness;
+    boolean alive = true;
+    boolean passedOut = false;
 
     public Pirate(int drunkenness) {
     }
 
-    public void drinkSomeRum(Pirate pirate) {
-        this.drunkenness = drunkenness;
-        if (pirate == null){
-            System.out.println("The pirate is dead");
-        } else {
+    public void drinkSomeRum() {
+        if (alive){
             drunkenness += 10;
             counter++;
-        }
-    }
-
-    public void howsItgoingMate(Pirate pirate) {
-        if (pirate == null){
+        } else {
             System.out.println("The pirate is dead");
         }
-        else if (counter <= 4) {
+    }
+
+    public void howsItgoingMate() {
+        if (counter <= 4 && alive) {
             System.out.println("Pour me anudder!");
-        } else if (counter > 4) {
+        } else if (alive) {
             System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+            passedOut = true;
+        } else {
+            System.out.println("The pirate is dead.");
         }
     }
 
-    public void die(Pirate pirate){
-        pirate = null;
-        System.out.println("The pirate is dead.");
+    public void die(){
+        alive = false;
     }
 
 
 
     public static void main(String[] args) {
-        Pirate pirate = new Pirate(10);
-        pirate.drinkSomeRum(pirate);
-        pirate.howsItgoingMate(pirate);
-        pirate.drinkSomeRum(pirate);
-        pirate.drinkSomeRum(pirate);
-        pirate.drinkSomeRum(pirate);
-        pirate.die(pirate);
-        pirate.howsItgoingMate(pirate);
+        Pirate pirate = new Pirate(0);
+        pirate.drinkSomeRum();
+        pirate.drinkSomeRum();
+        pirate.drinkSomeRum();
+        pirate.die();
+        pirate.drinkSomeRum();
+
+        pirate.howsItgoingMate();
     }
 }
 
@@ -52,4 +52,11 @@ drinkSomeRum() - intoxicates the Pirate some
 howsItGoingMate() - when called, the Pirate replies, if drinkSomeRun was called:-
 0 to 4 times, "Pour me anudder!"
 else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and sleeps it off.
+If you manage to get this far, then you can try to do the following.
+
+die() - this kills off the pirate, in which case, drinkSomeRum, etc. just result in he's dead.
+brawl(x) - where pirate fights another pirate (if that other pirate is alive) and there's a 1/3 chance, 1 dies, the other dies or they both pass out.
+And... if you get that far...
+
+Add a parrot.
  */
