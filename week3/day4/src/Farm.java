@@ -3,31 +3,40 @@ import java.util.List;
 
 public class Farm {
     int slots;
-    List<Animal> Animals;
+    List<Animal> animals = new ArrayList<>();
 
     public Farm(int slots){
-    this.Animals = new ArrayList<>();
-
+        this.slots = slots;
     }
 
     public void breed() {
-        if (Animals.size() < slots) {
-            Animals.add(new Animal(50, 50));
-            System.out.println("New animal made, now you have" + Animals.size());
-        } else {
-            System.out.println("The Farm is full");
+        for (int i = animals.size(); i < slots; i++) {
+
+            if (animals.size() < slots) {
+                animals.add(new Animal(50, 50));
+                System.out.println("New animal made, now you have " + animals.size());
+            } else {
+                System.out.println("The Farm is full");
+            }
+            System.out.println(animals.size());
         }
     }
+    public void slaughter(){
+
+    }
+
     public static void main(String[] args) {
-        Farm newFarm = new Farm(15);
-        List<Animal> allatok = new ArrayList<>();
+
+        List<Animal> animals = new ArrayList<>();
         Animal animal = new Animal(50,50);
-        allatok.add(0, animal);
-        allatok.add(1,animal);
-        allatok.add(2, animal);
-        System.out.println(allatok.size());
+        Farm newFarm = new Farm(15);
+        animals.add(0, animal);
+        animals.add(1,animal);
+        animals.add(2, animal);
+        System.out.println("You had " + animals.size() + " animals,");
         newFarm.breed();
-        System.out.println(allatok.size());
+
+
 
     }
 }
