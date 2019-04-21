@@ -72,18 +72,18 @@ public class ShoppingList2 {
                 System.out.println("Bob buys more potato");
             }
         }
+
         if (bList.size() > aList.size()) {
             System.out.println("Bob buys more different stuff");
         }else if (aList.size() > bList.size()) {
             System.out.println("Alice buys more different stuff");
         }
-       
+
         if (aPay > bPay){
             System.out.println("Alice pays more");
         } else if (bPay > aPay){
             System.out.println("Bob pays more");
         }
-
     }
 }
 /*
