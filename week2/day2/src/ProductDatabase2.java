@@ -2,7 +2,7 @@
 import java.util.HashMap;
 
 public class ProductDatabase2 {
-    
+
     public static void main(String[] args) {
         HashMap<String, Integer> ProductDatabase2 = new HashMap<>();
         ProductDatabase2.put("Eggs", 200);
