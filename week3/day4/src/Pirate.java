@@ -1,10 +1,15 @@
+import java.lang.Math;
+
 public class Pirate {
     int counter = 0;
     int drunkenness;
-    boolean alive = true;
-    boolean passedOut = false;
+    boolean alive;
+    boolean passedOut;
 
-    public Pirate(int drunkenness) {
+    Pirate() {
+        this.drunkenness = 0;
+        this.alive = true;
+        this.passedOut = false;
     }
 
     public void drinkSomeRum() {
@@ -27,14 +32,31 @@ public class Pirate {
         }
     }
 
-    public void die(){
+    public void die() {
         alive = false;
     }
 
+    public void brawl(Pirate otherPirate) {
+        if (otherPirate.alive){
+            int chance = 0;
+            chance = (int) (Math.random() * (3+1));
+            if (chance == 1){
+                otherPirate.die();
+            }else if (chance == 2){
+                this.die();
 
+            }else {
+                this.passedOut = true;
+                otherPirate.passedOut = true;
+            }
+        }
+    }
+
+    public class Parrott {
+    }
 
     public static void main(String[] args) {
-        Pirate pirate = new Pirate(0);
+        Pirate pirate = new Pirate();
         pirate.drinkSomeRum();
         pirate.drinkSomeRum();
         pirate.drinkSomeRum();
