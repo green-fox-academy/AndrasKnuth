@@ -1,6 +1,6 @@
 public class Ship {
-   private Pirate captain;
-   private Pirate[] crew;
+    private Pirate captain;
+    private Pirate[] crew;
 
     public void fillShip(){
         captain = new Pirate();

@@ -1,4 +1,4 @@
-import java.lang.Math;
+mport java.lang.Math;
 
 public class Pirate {
     int counter = 0;
