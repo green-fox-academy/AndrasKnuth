@@ -1,4 +1,4 @@
-mport java.lang.Math;
+import java.lang.Math;
 
 public class Pirate {
     int counter = 0;
@@ -54,6 +54,7 @@ public class Pirate {
 
     public class Parrott {
     }
+
 }
 
 /*

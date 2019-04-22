@@ -1,5 +1,5 @@
 public class Ship {
-    private Pirate captain;
+    public Pirate captain;
     private Pirate[] crew;
 
     public void fillShip(){
@@ -16,6 +16,16 @@ public class Ship {
 
     private Pirate[] getCrew() {
         return crew;
+    }
+
+    public void state(){
+        System.out.println("The ship is filled with " + crew.length + " pirates!");
+        System.out.println("The captain is alive: " + captain.alive + ", passed out: " + captain.passedOut + " , his intoxication is: " + captain.drunkenness);
+        System.out.println();
+    }
+
+    public boolean battle(Ship otherShip){
+
     }
 }
 /*
