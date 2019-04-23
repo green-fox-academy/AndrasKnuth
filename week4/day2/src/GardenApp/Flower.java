@@ -1,21 +1,20 @@
 package GardenApp;
 
-public class Flower {
-    int water;
-    String color;
-    boolean needsWater;
+public class Flower extends Plants{
 
-    public Flower(){}
+    public Flower(String color){
+        super(color);
+    }
 
-    public Flower(int water, String color) {
-        if(water < 5){
-            needsWater = true;
+    public boolean setFlowerNeedsWater() {
+        if(waterAmount < 5){
+            return needsWater = true;
         } else {
-            needsWater = false;
+            return needsWater = false;
         }
     }
 
-    public int getWater(){
-        return this.water;
+    public double wateringFlower(double amountOfWaterForOneFlower) {
+        return waterAmount += amountOfWaterForOneFlower * 0.75;
     }
 }

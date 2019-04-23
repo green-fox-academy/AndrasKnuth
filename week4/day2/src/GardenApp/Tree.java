@@ -1,24 +1,20 @@
 package GardenApp;
 
-public class Tree {
-    int water;
-    String color;
-    boolean needsWater;
+public class Tree extends Plants {
 
-    public Tree(){}
+    public Tree(String color) {
+        super(color);
+    }
 
-    public Tree(int water, String color){
-        this.color = color;
-        this.water = water;
-        if (water < 10){
-            needsWater = true;
+    public boolean setTreeNeedsWater() {
+        if (waterAmount < 10) {
+            return needsWater = true;
         } else {
-            needsWater = false;
+            return needsWater = false;
         }
     }
 
-
-    public int getWater(){
-        return this.water;
+    public double wateringTree(double amountOfWaterForOneFlower) {
+        return waterAmount += amountOfWaterForOneFlower * 0.4;
     }
 }
