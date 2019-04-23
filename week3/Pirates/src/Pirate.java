@@ -6,7 +6,7 @@ public class Pirate {
     boolean alive;
     boolean passedOut;
 
-    Pirate() {
+    public Pirate() {
         this.drunkenness = 0;
         this.alive = true;
         this.passedOut = false;
