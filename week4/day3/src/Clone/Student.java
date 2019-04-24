@@ -1,6 +1,6 @@
-package GreenFoxInheritance;
+package Clone;
 
-public class Student extends Person{
+public class Student extends Person implements Cloneable{
     String previousOrganization;
     int skippedDays;
 
@@ -17,7 +17,7 @@ public class Student extends Person{
         previousOrganization = "The School of Life";
         skippedDays = 0;
     }
-//Methods
+    //Methods
     @Override
     public void introduce(){
         System.out.println("Hi, I'm " + getName() + ", a " +  getAge()  + " years old " + getGender() + " from " + previousOrganization  +" who skipped " + skippedDays + "days from the course already.");
@@ -30,6 +30,11 @@ public class Student extends Person{
 
     }
 
+    @Override
+    public Student clone() {
+        Student student = this;
+        return student;
+    }
 
     public void skipDays(int numberOfDays){
         this.skippedDays = skippedDays + numberOfDays;
