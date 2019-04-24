@@ -1,4 +1,4 @@
 package AircraftCarriers;
 
-public class BottleField {
+public class BOTTLEFIELD {
 }
