@@ -1,6 +1,6 @@
 package Comparator;
 
-public class Domino implements Comparable<Domino>{
+public class Domino implements Comparable<Domino> {
     private final int left;
     private final int right;
 
@@ -22,9 +22,10 @@ public class Domino implements Comparable<Domino>{
         return "[" + left + ", " + right + "]";
     }
 
+
     @Override
-    public int compareTo(Domino other){
-        return Integer.compare(this.left, other.left);
+    public int compareTo(Domino o) {
+        return toString().compareTo(o.toString());
     }
 
 

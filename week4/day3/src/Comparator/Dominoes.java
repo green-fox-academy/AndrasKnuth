@@ -1,7 +1,9 @@
 package Comparator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
 
 public class Dominoes {
     public static void main(String[] args) {
@@ -10,19 +12,12 @@ public class Dominoes {
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
         // eg: [2, 4], [4, 3], [3, 5] ...
 
-        List<Domino> sorted = new ArrayList<>();
-
-        for (int i = 0; i < dominoes.size() - 1; i++) {
-            for (int j = i + 1; j < dominoes.size() - i; j++) {
-                if (dominoes.get(i).getRightSide() == dominoes.get(j).getLeftSide()) {
-                    sorted.add(dominoes.get(i));
-                    sorted.add(dominoes.get(j));
-                }
-            }
-        }
-        dominoes = sorted;
-
         System.out.println(dominoes);
+
+
+
+
+
     }
 
     static List<Domino> initializeDominoes() {
@@ -34,6 +29,16 @@ public class Dominoes {
         dominoes.add(new Domino(2, 4));
         dominoes.add(new Domino(7, 1));
         return dominoes;
+
+       /* Collections.sort(dominoes, new Comparator<Domino>(){
+
+            public int compare(Domino o1, Domino o2)
+            {
+                return o1.compareTo(o2);
+            }
+        });
+        return dominoes;*/
+    }
     }
 
-}
+
