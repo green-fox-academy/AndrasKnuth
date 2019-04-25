@@ -13,7 +13,6 @@ public class CountLettersTest {
 
     @Test
     public void countLettersTest(){
-        HashMap<Character, Integer> charCountMap = new HashMap<>();
         String i = "beabeabea";
         HashMap<Character, Integer> result = new HashMap<>();
         result.put('a', 3);
