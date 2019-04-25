@@ -12,16 +12,16 @@ Anagram anagram;
 
 @Test
     public void anagramTest(){
-    char[] s = {'s', 'i', 'l', 'e', 'n', 't'};
-    char[] s1 = {'l', 'i', 's', 't', 'e', 'n'};
+    String s = "silent";
+    String s1 = "listen";
     assertEquals(true, Anagram.areAnagram(s,s1));
 }
 
     @Test
     public void notAnagramTest(){
-        char[] s = {'g', 'i', 'l', 'e', 'z', 't'};
-        char[] s1 = {'l', 'i', 's', 't', 'e', 'n'};
-        assertNotEquals(false, Anagram.areAnagram(s,s1));
+        String s = "silent";
+        String s1 = "music";
+        assertNotEquals(true, Anagram.areAnagram(s,s1));
     }
 
 }
