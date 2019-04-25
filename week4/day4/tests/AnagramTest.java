@@ -17,4 +17,11 @@ Anagram anagram;
     assertEquals(true, Anagram.areAnagram(s,s1));
 }
 
+    @Test
+    public void notAnagramTest(){
+        char[] s = {'g', 'i', 'l', 'e', 'z', 't'};
+        char[] s1 = {'l', 'i', 's', 't', 'e', 'n'};
+        assertNotEquals(false, Anagram.areAnagram(s,s1));
+    }
+
 }
