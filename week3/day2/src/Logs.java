@@ -1,4 +1,4 @@
-/*
+
 import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
@@ -14,7 +14,6 @@ public class Logs {
 
     private static List IP(String file) {
         try {
-
             Path logFilePath = Paths.get(file);
             List<String> content = Files.readAllLines(logFilePath);
             List<String> IPAddresses = new ArrayList<>();
@@ -38,7 +37,7 @@ public class Logs {
         }
     }
 }
-*/
+
 // Read all data from 'log.txt'.
 // Each line represents a log message from a web server
 // Write a function that returns an array with the unique IP addresses.
