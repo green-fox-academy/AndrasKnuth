@@ -4,20 +4,21 @@ public class MatrixCompare {
         int [][] newMatrix = new int[2][2];
         for(int i = 0; i < matrixA.length; i++){
             for (int j = 0; j < matrixB.length; j++){
-                if (matrixA[j][i] > matrixB[j][i]){
+                if (matrixA[j][i] >= matrixB[j][i]){
                     newMatrix[j][i] = matrixA[j][i];
                 } else if (matrixA[j][i] < matrixB[j][i]){
-                    matrixB[j][i] = newMatrix[j][i];
-                    for (int x = 0; x < newMatrix.length; x++) {
-                        for (int y = 0; y < newMatrix[x].length; y++) {
-                            System.out.print(newMatrix[x][y] + " ");
-                        }
-                        System.out.println();
-                    }
+                    newMatrix[j][i] = matrixB[j][i];
                 }
             }
         }
+        for (int x = 0; x < newMatrix.length; x++) {
+            for (int y = 0; y < newMatrix[x].length; y++) {
+                System.out.print(newMatrix[x][y] + " ");
+            }
+            System.out.println();
+        }
         return newMatrix;
+
     }
 
     public static void main(String[] args) {
@@ -28,6 +29,7 @@ public class MatrixCompare {
                               {0,1}};
         int [][] matrixTwo = {{0,3},
                               {-1,1}};
+
         matrixCompare.matrixCompare(matrixOne, matrixTwo);
     }
 }
