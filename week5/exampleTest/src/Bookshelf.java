@@ -6,13 +6,23 @@ import static java.util.Comparator.comparing;
 public class Bookshelf {
     public List<Book> bookshelf = new ArrayList<>();
 
-    public void lighttestBookAuthor(List bookshelf){
-        bookshelf.stream().max(comparing(Book::getWeight)).get();
+    public void lighttestBookAuthor(){
+        System.out.println(bookshelf.stream().min(comparing(Book::getWeight)).get().getAuthor());
+    }
 
+    public void mostPagesAuthor() {
+        System.out.println(bookshelf.stream().max(comparing(Book::getPageNumber)).get().getAuthor());
     }
 
 
     public static void main(String[] args) {
+        Bookshelf bookshelf = new Bookshelf();
+        Hardcover hardcover = new Hardcover("The Pooh", "Milne", 1989, 125);
+        Paperback paperback = new Paperback("Zorro", "Francesco Hidalgo", 1976, 256);
+        bookshelf.bookshelf.add(0, hardcover);
+        bookshelf.bookshelf.add(1, paperback);
+        bookshelf.lighttestBookAuthor();
+        bookshelf.mostPagesAuthor();
     }
 }
 

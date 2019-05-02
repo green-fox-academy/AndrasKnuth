@@ -12,6 +12,10 @@ abstract class Book {
     public String getAuthor() {
         return author;
     }
+
+    public int getPageNumber() {
+        return pageNumber;
+    }
 }
 
 /*

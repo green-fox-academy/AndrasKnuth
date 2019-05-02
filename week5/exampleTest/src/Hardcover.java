@@ -12,9 +12,11 @@ public class Hardcover extends Book{
     }
 
     public String toString() {
-        String toString = this.author + this.title + this.releaseYear;
+        String toString = this.author + " " + this.title + " " + this.releaseYear;
         return toString;
     }
+
+
 }
 /*
 •	Hardcover book
