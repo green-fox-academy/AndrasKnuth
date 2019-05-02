@@ -29,7 +29,7 @@ public class Aircraft {
     return status;
   }
 
-  public boolean isPrioprity() {
+  public boolean isPriority() {
     if (getType().equals("F35")) {
       return true;
     }
