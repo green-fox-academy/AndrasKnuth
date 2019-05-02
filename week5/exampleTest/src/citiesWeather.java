@@ -11,7 +11,7 @@ public class citiesWeather {
             List<String> citiesWeather = Files.readAllLines(filePath);
             HashMap <String,String> weather = new HashMap<>();
             for (String cities : citiesWeather){
-                System.out.println(citiesWeather.subList(',',','));
+                weather.keySet(citiesWeather.subList(',',','));
 
             }
 
