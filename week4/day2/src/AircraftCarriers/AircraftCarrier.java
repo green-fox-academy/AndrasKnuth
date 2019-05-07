@@ -13,7 +13,7 @@ public class AircraftCarrier {
   }
 
   public void addAirplane() {
-    aircrafts.add(new Aircraft());
+    aircrafts.add(new Aircraft("F16"));
   }
 
   public void fill() {
