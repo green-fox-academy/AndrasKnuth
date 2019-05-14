@@ -29,13 +29,13 @@ public class Fox {
         .collect(Collectors.toList()));
 
     System.out.println(foxes.stream()
-    .filter(n -> n.color == Color.green && n.age < 5 )
-    .map(n -> n.name)
-    .collect(Collectors.toList()));
+        .filter(n -> n.color == Color.green && n.age < 5)
+        .map(n -> n.name)
+        .collect(Collectors.toList()));
 
     System.out.println(foxes.stream()
-    .filter(n -> n.color == Color.green)
-    .count());
+        .filter(n -> n.color == Color.green)
+        .count());
   }
 }
 
