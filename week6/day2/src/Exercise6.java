@@ -1,6 +1,13 @@
+import java.util.stream.Collectors;
+
 public class Exercise6 {
   public static void main(String[] args) {
-    String string = "gargRBegaethDGBETAHrBFDAbdagbA";
+    String example = "gargRBegaethDGBETAHrBFDAbdagbA";
+    String capitalLetters = example.chars()
+        .filter(Character::isUpperCase)
+        .mapToObj(c -> Character.toString((char)c))
+        .collect(Collectors.joining());
+    System.out.println(capitalLetters);
 
   }
 }
