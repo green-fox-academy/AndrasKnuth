@@ -1,0 +1,31 @@
+body {
+    background-color: blue;
+    font-family: 'Roboto', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 5px;
+    color: gray;
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid gray;
+    min-width: 200px;
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: black;
+    border-bottom: 3px solid gray;
+}
+
+tr > td {
+    background-color: #ccc;
+}
+
+tr:nth-child(2n) > td {
+    background-color: #fff;
+}

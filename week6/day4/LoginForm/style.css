@@ -1,0 +1,31 @@
+input {
+      display: block;
+  width: 100%; 
+    }
+input[name=userName]:focus {
+        border-color: green;
+  
+    }
+body {
+  background-color: gray;
+}
+.login {
+    background-color: #fff;
+    margin: 2rem auto;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 40px;
+}
+form {
+  max-width: 200px;
+  text-align: left;
+    font-size: 0.9rem;
+}
+p {
+  text-align: right;
+  font-size: 0.75rem;
+}
+form[type=submit]{
+  border-radius: 5px;
+}
