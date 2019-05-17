@@ -1,6 +1,5 @@
 input {
-      display: block;
-  width: 100%; 
+  width: 100%;
     }
 input[name=userName]:focus {
         border-color: green;
@@ -25,7 +24,11 @@ form {
 p {
   text-align: right;
   font-size: 0.75rem;
+  border: 0px, 0px, 0px, 0px;
+  margin: 0px, 0px, 0px, 0px;
+  padding: 0px, 0px, 0px, 0px;
 }
-form[type=submit]{
+input[type=submit] {
   border-radius: 5px;
+  height: 1.5rem;
 }
