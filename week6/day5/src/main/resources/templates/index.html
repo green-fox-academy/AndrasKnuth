@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AwesomeWebShop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="title"> Basic WebShop
+  </div>
+  <hr>
+  <div class="navigation">
+      <button id="btn_only_available" onclick="location.href='/webshop/only-available'" type="submit">ONLY AVAILABLE</button>
+      <button id="btn_cheapest_first" onclick="location.href='/webshop/cheapest-first'" type="submit">CHEAPEST AVAILABLE</button>
+      <button id="btn_contains_nike" onclick="location.href='/webshop/contains-nike'" type="submit">CONTAINS NIKE</button>
+      <button id="btn_average_stock" onclick="location.href='/webshop/average-stock'" type="submit">AVERAGE STOCK</button>
+      <button id="btn_most_expensive_available" onclick="location.href='/webshop/most-expensive-available'" type="submit">MOST EXPENSIVE AVAILABLE</button>
+  </div>
+  <div class="search">
+      <div class="search-label">
+          <label for="search_input">Search for:</label>
+      </div>
+      <form class="search-field-button" method="POST" action="/webshop/search">
+          <input id="search_input" name="search_input" type="search" placeholder="...something like Nike">
+          <button id="btn_search" onclick="location.href='/webshop/search'" type="submit">Search</button>
+      </form>
+  </div>
+  <div class="table">
+    <table>
+        <thead>
+          <th width="25%">Name</th>
+          <th width="30%">Description</th>
+          <th width="30%">Price</th>
+          <th width="15%">Quantity of stock</th>
+        </thead>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getDescription()}"></td>
+            <td th:text="${item.get()}"></td>
+            <td th:text="${item.getName()}"></td>
+        </tr>
+    </table>
+  </div>
+</body>
+</html>
