@@ -1,13 +1,15 @@
 package com.basicwebshop.webshop.Controllers;
-
 import com.basicwebshop.webshop.Models.ShopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Controller
 public class WebShop {
   List<ShopItem> shopItemList = new ArrayList<>();
@@ -23,8 +25,24 @@ public class WebShop {
   }
 
   @RequestMapping(value = "/webshop/search", method = RequestMethod.POST)
-  
+  public String search(Model model, @RequestParam("search_input") String search_input) {
+    if (search_input.length() > 0) {
+      model.addAttribute("items",searchItems(search_input));
+    }
+    return "index";
+  }
 
+  public List<ShopItem> searchItems(String text){
+    return shopItemList.stream()
+        .filter(items -> {
+          CharSequence searchText = text.toLowerCase();
+          if(items.getName().toLowerCase().contains(searchText) || items.getDescription().toLowerCase().contains(searchText)){
+            return true;
+          }
+          return false;
+        })
+        .collect(Collectors.toList());
+  }
 
   public void listFill(){
     List<ShopItem> shopItemList = new ArrayList<>();
@@ -34,7 +52,7 @@ public class WebShop {
         39.9, 2 ));
     shopItemList.add(new ShopItem("Coca Cola", "0.5l standard coke",
         2.0, 0 ));
-    shopItemList.add(new ShopItem("Wkoin", "Chicken with fried rice and WOKIN sauce",
+    shopItemList.add(new ShopItem("Wokin", "Chicken with fried rice and WOKIN sauce",
         4.9, 100 ));
     shopItemList.add(new ShopItem("T-shirt", "Blue with corgi on a bike",
         9.9, 5 ));
