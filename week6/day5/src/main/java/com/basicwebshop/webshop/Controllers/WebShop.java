@@ -1,11 +1,31 @@
 package com.basicwebshop.webshop.Controllers;
 
 import com.basicwebshop.webshop.Models.ShopItem;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Controller
 public class WebShop {
+  List<ShopItem> shopItemList = new ArrayList<>();
+
+  public WebShop(){
+    listFill();
+  }
+
+  @RequestMapping("/webshop")
+  public String webShop(Model model){
+    model.addAttribute("items", shopItemList);
+    return "index";
+  }
+
+  @RequestMapping(value = "/webshop/search", method = RequestMethod.POST)
+  
+
+
   public void listFill(){
     List<ShopItem> shopItemList = new ArrayList<>();
     shopItemList.add(new ShopItem("Running Shoes", "Nike running shoes for everyday use",
