@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>AwesomeWebShop</title>
@@ -36,8 +36,8 @@
         <tr th:each="item : ${items}">
             <td th:text="${item.getName()}"></td>
             <td th:text="${item.getDescription()}"></td>
-            <td th:text="${item.get()}"></td>
-            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getPrice()}"></td>
+            <td th:text="${item.getQuantityOfStock()}"></td>
         </tr>
     </table>
   </div>
