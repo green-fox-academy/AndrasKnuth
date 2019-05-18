@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,6 +32,78 @@ public class WebShop {
     return "index";
   }
 
+  @RequestMapping("/webshop/only-available")
+  public String onlyAvailable(Model model) {
+    model.addAttribute("items", filterOnStock());
+    return "index";
+  }
+
+  @RequestMapping("/webshop/cheapest-first")
+  public String cheapestFirst(Model model) {
+    model.addAttribute("items", orderByPriceAscending());
+    return "index";
+  }
+
+  @RequestMapping("/webshop/contains-nike")
+  public String containsNike(Model model) {
+    model.addAttribute("items", filterContainsNike());
+    return "index";
+  }
+
+  @RequestMapping("/webshop/avg-stock")
+  public String averageStock(Model model) {
+    model.addAttribute("average", getAverageStock());
+    return "avgstock";
+  }
+
+  @RequestMapping("/webshop/most-expensive-available")
+  public String mostExpensiveAvailable(Model model) {
+    model.addAttribute("items", filterMostExpensiveAvailable());
+    return "index";
+  }
+
+  public List<ShopItem> orderByPriceAscending() {
+    return shopItemList.stream()
+        .filter(items -> items.getQuantityOfStock() != 0)
+        .sorted(Comparator.comparing(ShopItem::getPrice)).collect(Collectors.toList());
+  }
+
+  public List<ShopItem> filterOnStock() {
+    return shopItemList.stream()
+        .filter(items -> items.getQuantityOfStock() != 0)
+        .collect(Collectors.toList());
+  }
+
+  public List<ShopItem> filterContainsNike() {
+    return shopItemList.stream()
+        .filter(items -> {
+          CharSequence nike = "Nike";
+          if (items.getName().contains(nike) || items.getDescription().contains(nike)) {
+            return true;
+          } else {
+            return false;
+          }
+        })
+        .collect(Collectors.toList());
+  }
+
+  public Double getAverageStock() {
+    Double avg;
+    long quantity = filterOnStock().stream().mapToInt(o -> o.getQuantityOfStock()).sum();
+    long availableItemQuantity = filterOnStock().stream()
+        .count();
+    avg = Double.valueOf(quantity / availableItemQuantity);
+    return avg;
+  }
+
+  public List<ShopItem> filterMostExpensiveAvailable() {
+    return shopItemList.stream()
+        .filter(items -> items.getQuantityOfStock() != 0)
+        .max(Comparator.comparingDouble(items -> items.getPrice()))
+        .get().toList();
+  }
+
+
   public List<ShopItem> searchItems(String text){
     return shopItemList.stream()
         .filter(items -> {
@@ -45,7 +117,7 @@ public class WebShop {
   }
 
   public void listFill(){
-    List<ShopItem> shopItemList = new ArrayList<>();
+    shopItemList.clear();
     shopItemList.add(new ShopItem("Running Shoes", "Nike running shoes for everyday use",
         140.0, 5 ));
     shopItemList.add(new ShopItem("Printer", "Some HP printer",
