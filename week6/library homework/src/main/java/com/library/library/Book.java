@@ -1,4 +1,4 @@
-package com.library.library.Models;
+package com.library.library;
 
 public class Book {
   private static int nextId = 0;

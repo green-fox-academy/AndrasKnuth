@@ -1,5 +1,4 @@
-package com.library.library.Controllers;
-import com.library.library.Models.Book;
+package com.library.library;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +16,7 @@ public class BookController {
     books.add(new Book("Cat's Cradle", "Kurt Vonnegut", 1963));
     books.add(new Book("Do Androids Dream of Electric Sheep?", "Philip K. Dick", 1968));
   }
+
   @RequestMapping(path = "/books", method = RequestMethod.GET)
   public String showBooks(Model model) {
     model.addAttribute("books", books);
@@ -57,23 +57,21 @@ public class BookController {
     return "index";
   }
 
-  public List<Book> filterBooksByAuthor(String author){
+  private List<Book> filterBooksByAuthor(String author) {
     return books.stream()
-        .filter(c -> c.getAuthor() == author)
+        .filter(book -> book.getAuthor().equals(author))
         .collect(Collectors.toList());
   }
 
-  @RequestMapping(path = "/books/addnew", method = RequestMethod.GET)
-  public String addBookForm(Model model, @ModelAttribute(name = "book") Book book){
+  @RequestMapping(path = "/books/add", method = RequestMethod.GET)
+  public String addBookForm(Model model, @ModelAttribute(name="book") Book book) {
     model.addAttribute("book", book);
     return "create";
   }
 
   @RequestMapping(path = "/books/add", method = RequestMethod.POST)
-  public String addBook(@ModelAttribute(name = "book") Book book){
+  public String addBook(@ModelAttribute(name="book") Book book) {
     books.add(book);
     return "redirect:/books";
   }
-
-
 }
