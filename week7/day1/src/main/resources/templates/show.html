@@ -6,11 +6,25 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<div>
-    <div th:each="bankAccount : ${bankAccount}" >
-        <h1 th:text="| ${bankAccount.name} ${bankAccount.getBalance()} for a ${bankAccount.getBalanceType()}
-         ${bankAccount.getAnimalType()}|"></h1>
-    </div>
-</div>
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Owner</th>
+        <th>Balance</th>
+        <th>Animal Type</th>
+        <th>King</th>
+        <th>Good/Bad</th>
+    <tr th:each="bankAccount : ${bankAccount}" th:style="${bankAccount.king}? ${shiny}">
+        <td th:text="${bankAccountStat.index}"></td>
+        <td th:text="*{bankAccount.name}"></td>
+        <td th:text="|*{bankAccount.balance} ${bankAccount.currency}|"></td>
+        <td th:text="*{bankAccount.animalType}"></td>
+        <td th:text="*{bankAccount.king}"></td>
+        <div th:switch="${bankAccount.bad}">
+        <td th:case="false">Good</td>
+        <td th:case="true">Bad</td>
+        </div>
+    </tr>
+</table>
 </body>
 </html>
