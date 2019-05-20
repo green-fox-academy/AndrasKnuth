@@ -10,6 +10,9 @@ public class BankAccount {
   private boolean king;
   private boolean bad;
 
+  public BankAccount(){
+  }
+
   public BankAccount(String name, Double balance, String animalType, String currency, boolean king, boolean bad) {
     this.name = name;
     this.balance = balance;
@@ -46,5 +49,29 @@ public class BankAccount {
 
   public boolean isBad() {
     return bad;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setAnimalType(String animalType) {
+    this.animalType = animalType;
+  }
+
+  public void setBalance(Double balance) {
+    this.balance = balance;
+  }
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
+  public void setBad(boolean bad) {
+    this.bad = bad;
+  }
+
+  public void setKing(boolean king) {
+    this.king = king;
   }
 }

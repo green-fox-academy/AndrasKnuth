@@ -14,16 +14,17 @@
         <th>Animal Type</th>
         <th>King</th>
         <th>Good/Bad</th>
-    <tr th:each="bankAccount : ${bankAccount}" th:style="${bankAccount.king}? ${shiny}">
+    <tr th:each="bankAccount : ${bankAccount}" th:style="${bankAccount.isKing()}? ${shiny}">
         <td th:text="${bankAccountStat.index}"></td>
         <td th:text="*{bankAccount.name}"></td>
         <td th:text="|*{bankAccount.balance} ${bankAccount.currency}|"></td>
         <td th:text="*{bankAccount.animalType}"></td>
         <td th:text="*{bankAccount.king}"></td>
-        <div th:switch="${bankAccount.bad}">
+        <td th:text="${bankAccount.bad ? 'Good Guy' : 'Bad Guy'}"></td>
+        <!-- <div th:switch="${bankAccount.bad}">
         <td th:case="false">Good</td>
         <td th:case="true">Bad</td>
-        </div>
+        </div> -->
     </tr>
 </table>
 </body>
