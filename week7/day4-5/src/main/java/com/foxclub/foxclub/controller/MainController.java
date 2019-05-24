@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
   private FoxList foxList;
   private Logger logger;
-  private FoxService sessionService;
+  private FoxService foxService;
   private int activeFoxIndex = 0;
 
   public MainController(FoxList foxList, Logger logger, FoxService foxService) {
     this.foxList = foxList;
     this.logger = logger;
-    this.sessionService = sessionService;
-    this.sessionService.setMainController(this);
+    this.foxService = foxService;
+    this.foxService.setMainController(this);
   }
 
   @GetMapping("/")
@@ -54,7 +54,7 @@ public class MainController {
       model.addAttribute("activeFoxIndex", activeFoxIndex);
       return "redirect:/login";
     }
-    sessionService.login(fox);
+    foxService.login(fox);
     logger.saveLoginAction();
     model.addAttribute("fox", fox);
     model.addAttribute("activeFoxIndex", activeFoxIndex);
@@ -86,6 +86,45 @@ public class MainController {
     model.addAttribute("fox", foxList.getFoxList().get(activeFoxIndex));
     return "redirect:/";
   }
+  @GetMapping("/trickcenter")
+  public String trickCenter(Model model) {
+    model.addAttribute("activeFoxIndex", activeFoxIndex);
+    if (activeFoxIndex == 0) {
+      model.addAttribute("fox", new Fox());
+      return "redirect:/login";
+    }
+    model.addAttribute("fox", foxList.getFoxList().get(activeFoxIndex));
+    return "trickcenter";
+  }
+
+  @PostMapping("/tricksave")
+  public String saveTrick(Model model, @RequestParam("trick") String trick) {
+    foxList.getFoxList().get(activeFoxIndex).addTrick(trick);
+    logger.saveTrickAction(trick);
+
+    model.addAttribute("activeFoxIndex", activeFoxIndex);
+    model.addAttribute("fox", foxList.getFoxList().get(activeFoxIndex));
+    return "redirect:/";
+  }
+
+  @GetMapping("/actionhistory")
+  public String actionHistory(Model model) {
+    model.addAttribute("activeFoxIndex", activeFoxIndex);
+    if (activeFoxIndex == 0) {
+      model.addAttribute("fox", new Fox());
+      return "redirect:/login";
+    }
+    model.addAttribute("fox", foxList.getFoxList().get(activeFoxIndex));
+    model.addAttribute("actionHistoryLogger", logger);
+    return "actionhistory";
+  }
+
+  @GetMapping("/logout")
+  public String logout(Model model) {
+    model.addAttribute("activeFoxIndex", activeFoxIndex);
+    foxService.logout();
+    return "redirect:/login";
+  }
 
   public void setActiveFoxIndex(int activeFoxIndex) {
     this.activeFoxIndex = activeFoxIndex;
@@ -111,11 +150,11 @@ public class MainController {
     return logger;
   }
 
-  public void setSessionService(FoxService sessionService) {
-    this.sessionService = sessionService;
+  public void setFoxService(FoxService foxService) {
+    this.foxService = foxService;
   }
 
-  public FoxService getSessionService() {
-    return sessionService;
+  public FoxService getFoxService() {
+    return foxService;
   }
 }

@@ -8,10 +8,18 @@
 <body>
 <h1>Welcome to Programmer Fox Club</h1>
 <p>Please provide a name, so you can associate it to your pet!</p>
-<form th:action="@{/login}" method="post">
-    Name:
-    <input type = "text" name = "name">
-    <button type="submit">GO</button>
-</form>
+<div class="form">
+    <form  th:method="post" th:object="${fox}">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" th:field="*{name}" autofocus/>
+        <label for="color">Color</label>
+        <select id="color" name="color" th:field="*{color}" class="select-menu">
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+        </select>
+        <button type="submit">GO</button>
+    </form>
+</div>
 </body>
 </html>
