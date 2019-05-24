@@ -44,12 +44,12 @@ public class MainController {
   public String login(Model model) {
     model.addAttribute("activeFoxIndex", activeFoxIndex);
     model.addAttribute("fox", new Fox());
-    return "logger";
+    return "login";
   }
 
   @PostMapping("/login")
   public String loggedIn(Model model, @ModelAttribute Fox fox) {
-    if ((foxList.addFox(fox) && !fox.getName().isEmpty()) || foxList.checkFoxExists(fox.getName()) && !fox.getName().isEmpty()) {
+    /*if ((foxList.addFox(fox) && !fox.getName().isEmpty()) || foxList.checkFoxExists(fox.getName()) && !fox.getName().isEmpty()) {
     } else {
       model.addAttribute("activeFoxIndex", activeFoxIndex);
       return "redirect:/login";
@@ -58,7 +58,7 @@ public class MainController {
     logger.saveLoginAction();
     model.addAttribute("fox", fox);
     model.addAttribute("activeFoxIndex", activeFoxIndex);
-    return "redirect:/";
+    return "redirect:/"; */
   }
 
   @GetMapping("/nutritionstore")

@@ -12,12 +12,6 @@
     <form  th:method="post" th:object="${fox}">
         <label for="name">Name</label>
         <input id="name" name="name" type="text" th:field="*{name}" autofocus/>
-        <label for="color">Color</label>
-        <select id="color" name="color" th:field="*{color}" class="select-menu">
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="red">Red</option>
-        </select>
         <button type="submit">GO</button>
     </form>
 </div>
