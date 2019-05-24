@@ -6,13 +6,28 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<a href="http://localhost:8080/useful/colored"> Link to colored page</a><br>
-    <img src="../static/greenfox.png" alt="SFox" height="100" width="100">
-    <p></p>
+<a href="http://localhost:8080/useful/colored"> Information</a><br>
+    <img src="greenfox.png" alt="SFox" height="100" width="100">
+<div class="fox-infos">
+    <p th:text="| This is ${fox.name} Currently living on ${fox.food.getFoodName()} and ${fox.drink.getDrinkName()} He knows ${fox.trickList.size()} trick(s)|"></p>
+</div>
     <h1>Known Tricks:</h1><br>
-    
-    <!-- <ul th:each="student : ${names}">
-        <li th:text="*{student}"></li>
-    </ul> -->
+<div class="tricklist">
+    <div>
+    <lu th:each="trick : ${fox.trickList}">
+        <li th:text="${trick}"></li>
+    </lu>
+    </div>
+    <h1>Action history</h1>
+    <div class="ActionList">
+        <lu th:if="${actionHistoryLogger.actionList.size()} != 0" th:each="action : ${actionHistoryLogger.getLastFiveAction()}">
+            <li th:text="${action}"></li>
+        </lu>
+        <span th:unless="${actionHistoryLogger.actionList.size()} != 0">No actions so far.</span>
+
+    </div>
+     <!-- <ul th:each="fox : ${foxes}">
+        <li th:text="*{fox.name}"></li>
+    </ul> !-->
 </body>
 </html>
