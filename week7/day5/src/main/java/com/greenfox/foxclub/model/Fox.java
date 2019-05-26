@@ -1,18 +1,20 @@
 package com.greenfox.foxclub.model;
 
+import java.util.ArrayList;
+
 public class Fox {
-  private String name;
-  private Food food;
-  private Drink drink;
+  private String foxName;
+  private ArrayList<String> listOfTricks = new ArrayList<>();
 
-  public Fox(String name){
-    this.name = name;
+  public Fox(String foxName) {
+    this.foxName = foxName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public String getFoxName() {
+    return foxName;
   }
-  public String getName() {
-    return name;
+
+  public ArrayList<String> getListOfTricks() {
+    return listOfTricks;
   }
 }

@@ -8,11 +8,10 @@
 <h1>Welcome to the Programmer Fox Club</h1>
 <p>Please provide a name, so you can associate it to your pet!</p>
 <div class="form">
-<form method="post" th:object="fox">
-<label for="name">Name</label>
-    <input id="name" name="name" type="text" th:field="*{name}">
-    <button type="submit">GO</button>
-</form>
+    <form th:action="@{/login}" th:method="post">
+        <p>Name: <input type="text" name="name"></p>
+        <button type="submit"> GO </button>
+    </form>
 </div>
 </body>
 </html>
