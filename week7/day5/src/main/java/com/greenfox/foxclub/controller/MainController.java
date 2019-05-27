@@ -1,6 +1,8 @@
 package com.greenfox.foxclub.controller;
 
 import com.greenfox.foxclub.model.Fox;
+import com.greenfox.foxclub.service.DrinkService;
+import com.greenfox.foxclub.service.FoodService;
 import com.greenfox.foxclub.service.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,10 @@ public class MainController {
 
   @Autowired
   private FoxService foxService;
+  @Autowired
+  private FoodService foodService;
+  @Autowired
+  private DrinkService drinkService;
 
   @RequestMapping("/")
   public String index(Model model, @RequestParam(required = false) String name) {
