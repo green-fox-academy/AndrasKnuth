@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Edit todo</h1>
-<form th:action="@{'/todo/edit/' + ${todo.id}}" th:method="post" th:object="${todo}">
+<form th:action="@{'/edit/' + ${todo.id}}" th:method="post" th:object="${todo}">
     <div class="form-group">
         <label th:for="*{title}">Title</label>
         <input type="text" th:field="*{title}">

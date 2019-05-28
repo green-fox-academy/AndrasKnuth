@@ -56,10 +56,14 @@ public class TodoController {
     return "edit";
   }
 
-  @PostMapping("/{id}/edit")
-  public String editAndSaveTodo(Todo todo) {
-  todoServiceImp.edit(todo);
-  return "redirect:/list";
+  @PostMapping("/edit/{id}")
+  public String editAndSaveTodo(@PathVariable long id, Todo todo) {
+    Todo oldTodo = todoServiceImp.findById(id);
+    oldTodo.setDone(todo.isDone());
+    oldTodo.setTitle(todo.getTitle());
+    oldTodo.setUrgent(todo.isUrgent());
+    todoServiceImp.edit(oldTodo);
+    return "redirect:/list";
   }
 }
 
