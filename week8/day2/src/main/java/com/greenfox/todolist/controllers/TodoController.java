@@ -1,11 +1,17 @@
 package com.greenfox.todolist.controllers;
+import com.greenfox.todolist.services.TodoServiceImp;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class TodoController {
 
+  private TodoServiceImp todoServiceImp;
+
+  public TodoController(TodoServiceImp todoServiceImp){
+    this.todoServiceImp = todoServiceImp;
+  }
 
   @GetMapping("/todo")
   public String todo(){
@@ -13,8 +19,8 @@ public class TodoController {
   }
 
   @GetMapping({"/", "/list"})
-  public String list(){
-    return "This is my first Todo";
+  public String list(Model model){
+    model.addAttribute("todos", todoServiceImp.findAll());
+    return "todolist";
   }
-
-}
+ }
