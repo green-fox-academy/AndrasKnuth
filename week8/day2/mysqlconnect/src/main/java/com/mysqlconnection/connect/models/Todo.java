@@ -16,11 +16,16 @@ public class Todo {
   private boolean done = false;
 
   public Todo(){
-
   }
 
   public Todo(String title){
     this.title = title;
+  }
+
+  public Todo(String title, boolean urgent, boolean done){
+    this.title = title;
+    this.done = done;
+    this.urgent = urgent;
   }
 
   public void setId(long id) {

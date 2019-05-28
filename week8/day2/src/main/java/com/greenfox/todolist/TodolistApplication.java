@@ -1,5 +1,4 @@
 package com.greenfox.todolist;
-
 import com.greenfox.todolist.models.Todo;
 import com.greenfox.todolist.repository.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;

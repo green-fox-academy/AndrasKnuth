@@ -20,8 +20,8 @@ public class ConnectApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    todoRepo.save(new Todo("I have to learn"));
-    todoRepo.save(new Todo("I have to practice."));
-    todoRepo.save(new Todo("Setup tinder."));
+    todoRepo.save(new Todo("I have to learn", true, false));
+    todoRepo.save(new Todo("I have to practice.", true, false));
+    todoRepo.save(new Todo("Setup tinder.", false, true));
   }
 }

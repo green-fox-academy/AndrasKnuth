@@ -9,4 +9,5 @@ public interface ITodoService {
   Todo findById(long id);
   void save(Todo todo);
   void delete(long id);
+  void edit(Todo todo);
 }

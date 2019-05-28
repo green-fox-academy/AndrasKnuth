@@ -36,4 +36,9 @@ public class TodoServiceImp implements ITodoService{
   public void delete(long id) {
     todoRepo.deleteById(id);
   }
+
+  @Override
+  public void edit(Todo todo) {
+    todoRepo.save(todo);
+  }
 }
