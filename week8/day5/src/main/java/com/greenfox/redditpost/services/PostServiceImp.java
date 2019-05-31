@@ -1,9 +1,7 @@
 package com.greenfox.redditpost.services;
-
 import com.greenfox.redditpost.models.Post;
 import com.greenfox.redditpost.repositories.PostRepo;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 

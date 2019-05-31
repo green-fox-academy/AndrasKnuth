@@ -1,5 +1,4 @@
 package com.greenfox.redditpost.controllers;
-
 import com.greenfox.redditpost.models.Post;
 import com.greenfox.redditpost.services.PostServiceImp;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,7 @@ public class MainController {
 
   @GetMapping("/")
   public String mainPage(Model model) {
-    model.addAttribute("posts", postServiceImp);
+    model.addAttribute("posts", postServiceImp.findAll());
     return "index";
   }
 
@@ -28,8 +27,8 @@ public class MainController {
   }
 
   @PostMapping("/submit")
-  public String postTodo(String title) {
-    postServiceImp.save(new Post(title));
+  public String postTodo(String title, String url) {
+    postServiceImp.save(new Post(title, url));
     return "redirect:/";
   }
 

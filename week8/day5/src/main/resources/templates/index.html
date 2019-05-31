@@ -7,7 +7,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Todos</a>
+    <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,7 +17,7 @@
             <li class="nav-item active"><a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a></li>
             <li class="nav-item active"><a class="nav-link" href="/submit">Add new post</a></li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/todo" method="post">
+        <form class="form-inline my-2 my-lg-0" action="/post" method="post">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
@@ -25,14 +25,9 @@
 </nav>
 <h4>Trending posts:</h4>
 <table>
-    <tr th:each="post: ${posts}">
+    <tr th:each="post:${posts}">
         <td th:text="${post.getPopularity()}"></td>
-        <td><a th:href="@{|${todo.getId()}/edit|}">+</a> </td>
-        <td><a th:href="@{|${todo.getId()}/edit|}">-</a> </td>
-        <td th:text="${post.getTitle()}"></td>
-
-        <!--<td><a th:href="@{|todo/${todo.getId()}/delete|}">delete</a></td>
-        <td><a th:href="@{|${todo.getId()}/edit|}">edit</a> </td> !-->
+        <td ><a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a></td>
     </tr>
 </table>
 <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>

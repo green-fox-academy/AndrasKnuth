@@ -11,6 +11,7 @@
 <form th:action="@{/submit}" method="post">
     <label th:for="titleID">Title: </label>
     <input type="text" th:name="title" th:id="titleID"/>
+    <label>Url:</label>
     <input type="text" th:name="url" th:id="urlID">
     <input type="submit" th:value="Submit"/>
 </form>
