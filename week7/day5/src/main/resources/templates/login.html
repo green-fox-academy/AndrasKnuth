@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Login</title>
+    <meta charset="utf-8"/>
 </head>
 <body>
-<h1>Welcome to the Programmer Fox Club</h1>
-<p>Please provide a name, so you can associate it to your pet!</p>
-<div class="form">
-    <form th:action="@{/login}" th:method="post">
-        <p>Name: <input type="text" name="name"></p>
-        <button type="submit"> GO </button>
-    </form>
-</div>
+<h1>Welcome to the Fox Club!</h1>
+<p>Please provide a name, so you can associate it to your fox!</p>
+
+<form th:action="@{/login}" th:method="post">
+    <p>Name: <input type="text" name="name"></p>
+    <button type="submit"> GO </button>
+</form>
+
 </body>
 </html>

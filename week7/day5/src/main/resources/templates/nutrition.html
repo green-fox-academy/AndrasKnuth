@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise #</title>
+    <title>Nutrition Store</title>
     <meta charset="utf-8"/>
 </head>
 <body>
 <ul>
     <li><a th:href="@{/information}">Information</a></li>
-    <li><a th:href="@{/nutritionStore}">Nutrition Store</a></li>
+    <li><a th:href="@{/nutritionStore(name=${fox.getFoxName()})}">Nutrition Store</a></li>
+    <li><a th:href="@{/tricks(name=${fox.getFoxName()})}">Trick Center</a></li>
 </ul>
 
 <form th:action="@{/nutritionStore}" th:method="post">
-    <p>Food:</p>
-    <select name="food">
-        <option value="salad">Green Salad</option>
-        <option value="curry">Red Lentil Curry</option>
-        <option value="padthai">Pad Thai</option>
-        <option value="pizza">Vegan Pizza</option>
-        <option value="cake">Sweet Potato Browne</option>
-    </select>
-    <p>Drink:</p>
-    <select name="food">
-        <option value="coffee">Oat Milk Latte</option>
-        <option value="water">Still Water</option>
-        <option value="alcohol">Red Wine</option>
-        <option value="beer">Indian Pale Ale</option>
-        <option value="juice">Apricot Juice</option>
-    </select>
-    <button type="submit">Change</button>
+    <label>Food<label>
+        <select name="food" th:type="text">
+            <option th:each="food : ${foodList}"
+                    th:text="${food}"></option>
+        </select>
+        <label>Drink</label>
+        <select name="drink" th:type="text">
+            <option th:each="drink : ${drinkList}"
+                    th:text="${drink}"></option>
+        </select>
+        <input type="submit">Change</input>
+        <input type="hidden" name="name" th:value="${name}">
 </form>
 
 </body>

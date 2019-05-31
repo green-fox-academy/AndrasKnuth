@@ -8,13 +8,18 @@ import java.util.List;
 
 @Service
 public class FoodService {
-  List<Food> foods;
+  ArrayList<String> foods;
 
   public FoodService() {
     foods = new ArrayList<>();
+    foods.add("Green Salad");
+    foods.add("Red Lentil Curry");
+    foods.add("Pad Thai");
+    foods.add("Vegan Pizza");
+    foods.add("Sweet Potato Browne");
   }
 
-  public void addNewFood(Food food) {
-    foods.add(food);
+  public List<String> findAll() {
+    return foods;
   }
 }

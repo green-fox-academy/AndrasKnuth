@@ -4,6 +4,7 @@ import com.greenfox.foxclub.model.Fox;
 import com.greenfox.foxclub.service.DrinkService;
 import com.greenfox.foxclub.service.FoodService;
 import com.greenfox.foxclub.service.FoxService;
+import com.greenfox.foxclub.service.TrickService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,8 @@ public class MainController {
   private FoodService foodService;
   @Autowired
   private DrinkService drinkService;
+  @Autowired
+  private TrickService trickService;
 
   @RequestMapping("/")
   public String index(Model model, @RequestParam(required = false) String name) {
@@ -32,22 +35,26 @@ public class MainController {
   }
 
   @GetMapping("/login")
-  public String renderLogin(@RequestParam(required = false) String name) {
+  public String loginPage() {
     return "login";
   }
-
   @PostMapping("/login")
-  public String namePost(String name) {
+  public String namePass(String name) {
     return "redirect:/?name=" + name;
   }
 
   @RequestMapping("/nutritionStore")
-  public String nutritionSelector(@RequestParam String name) {
-    if (name == null) {
-      return "login";
-    } else {
+  public String nutritionSelector(@RequestParam(required = false) String name, Model model) {
+    model.addAttribute("foodList", foodService.findAll());
+    model.addAttribute("drinkList", drinkService.findAll());
+    model.addAttribute("name", name);
+    return "nutrition";
+  }
 
-      return "nutrition";
-    }
+  @RequestMapping("/tricks")
+  public String trickSelector(@RequestParam(required = false) String name, Model model) {
+    model.addAttribute("trickList", trickService.findAll());
+    model.addAttribute("name", name);
+    return "trick";
   }
 }

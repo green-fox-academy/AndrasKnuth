@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Main Page</title>
+    <title>Fox Club</title>
+    <meta charset="utf-8"/>
 </head>
 <body>
-<a href="index.html">Information</a><br>
-<img src="../greenfox.png" width="200" height="200">
-<p> This is <span th:text="${fox.getFoxName()}" />. Currently living on <span th:text="${}" /> and <span th:text="${}" />. He knows <span th:text="${fox.getListOfTricks().size()}" /> tricks.</p>
+<ul>
+    <li><a th:href="@{/information}">Information</a></li>
+    <li><a th:href="@{/nutritionStore(name=${fox.getFoxName()})}">Nutrition Store</a></li>
+    <li><a th:href="@{/tricks(name=${fox.getFoxName()})}">Trick Center</a></li>
+</ul>
+<img th:src="@{greenfoxImage.png}" />
+<p> This is <span th:text="${fox.getFoxName()}" />. Currently living on <span th:text="${fox.getFood()}" /> and <span th:text="${fox.getDrink()}" />. He knows <span th:text="${fox.getListOfTricks().size()}" /> tricks.</p>
 <h1> Known tricks </h1>
-<!-- <p th:if="${fox.getListOfTricks().size()==0}"> You know no tricks yet, go and learn some!<p/>
+<p th:if="${fox.getListOfTricks().size()==0}"> You know no tricks yet, go and learn some!<p/>
 
 <ul th:unless="${fox.getListOfTricks()}" th:each="trick : ${fox.getListOfTricks()}">
     <li th:text="${trick}"></li>
-</ul> !-->
+</ul>
 </body>
 </html>
