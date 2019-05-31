@@ -1,11 +1,8 @@
 package com.greenfox.redditpost.services;
-
 import com.greenfox.redditpost.models.Post;
-
 import java.util.List;
 
 public interface PostServiceInterface {
   List<Post> findAll();
-Post findById();
-
+  void save(Post post);
 }

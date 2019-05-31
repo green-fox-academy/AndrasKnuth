@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Submit a post</title>
+    <title>Add Post</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
 </head>
 <body>
+<h1>Add new todo</h1>
+
+<form th:action="@{/submit}" method="post">
+    <label th:for="titleID">Title: </label>
+    <input type="text" th:name="title" th:id="titleID"/>
+    <input type="text" th:name="url" th:id="urlID">
+    <input type="submit" th:value="Submit"/>
+</form>
 
 </body>
 </html>
