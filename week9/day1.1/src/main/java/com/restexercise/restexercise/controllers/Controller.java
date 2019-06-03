@@ -1,9 +1,7 @@
 package com.restexercise.restexercise.controllers;
 
-import com.restexercise.restexercise.models.Append;
+import com.restexercise.restexercise.models.*;
 import com.restexercise.restexercise.models.Error;
-import com.restexercise.restexercise.models.Message;
-import com.restexercise.restexercise.models.Until;
 import com.restexercise.restexercise.services.AppendService;
 import com.restexercise.restexercise.services.MessageService;
 import com.restexercise.restexercise.services.NumberService;
@@ -50,10 +48,10 @@ public class Controller {
   }
 
   @PostMapping("/dountil/{action}")
-  public Object doUntil(@PathVariable("action") String action,
-                        @RequestBody Until until) {
-    if (action != null & until != null) {
-numberService.
+  public Object doUntil (@PathVariable("action") String action,
+                         @RequestBody Until until) {
+    if (action != null && until != null) {
+      return numberService.doAction(action, until.getUntil());
     } else {
       return new Error("Please provide a number!");
     }
