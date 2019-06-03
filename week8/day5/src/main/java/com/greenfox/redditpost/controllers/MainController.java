@@ -31,5 +31,4 @@ public class MainController {
     postServiceImp.save(new Post(title, url));
     return "redirect:/";
   }
-
 }

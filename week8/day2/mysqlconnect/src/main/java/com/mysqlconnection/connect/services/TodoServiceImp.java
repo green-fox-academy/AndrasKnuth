@@ -1,9 +1,7 @@
 package com.mysqlconnection.connect.services;
-
 import com.mysqlconnection.connect.models.Todo;
 import com.mysqlconnection.connect.repository.TodoRepo;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
