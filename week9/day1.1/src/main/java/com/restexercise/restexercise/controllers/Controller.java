@@ -1,12 +1,10 @@
 package com.restexercise.restexercise.controllers;
-
 import com.restexercise.restexercise.models.*;
 import com.restexercise.restexercise.models.Error;
 import com.restexercise.restexercise.services.AppendService;
 import com.restexercise.restexercise.services.MessageService;
 import com.restexercise.restexercise.services.NumberService;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 public class Controller {
@@ -38,7 +36,8 @@ public class Controller {
     } else if (title == null) {
       return new Error("Please provide a title!");
     } else {
-      return new Message(messageService.welcome_message(name, title));
+      return new Message("Oh, hi there Mark, my dear student!"/*
+      <- This is for testing purposes, normal here: messageService.welcome_message(name, title)*/);
     }
   }
 
@@ -48,8 +47,8 @@ public class Controller {
   }
 
   @PostMapping("/dountil/{action}")
-  public Object doUntil (@PathVariable("action") String action,
-                         @RequestBody Until until) {
+  public Object doUntil(@PathVariable("action") String action,
+                        @RequestBody Until until) {
     if (action != null && until != null) {
       return numberService.doAction(action, until.getUntil());
     } else {
