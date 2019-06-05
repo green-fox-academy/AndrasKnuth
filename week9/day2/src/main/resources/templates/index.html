@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>URL shortener</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<p th:if="${!alias.getAlias().isEmpty() && !existingAlias}">Your URL is aliased to <span th:text="${alias.getAlias()}">
+</span> and your secret code is <span th:text="${alias.getSecretCode()}"></span>.</p>
+<p class="alias-warning" th:if="${existingAlias}">Your alias is already in use!</p>
+
+<form th:action="@{/save-link}" method="post">
+    <label th:for="url">Url: </label>
+    <input th:value="${alias.getUrl()}" type="text" th:name="url" th:id="urlID"/><br>
+    <label th:for="alias">Alias: </label>
+    <input th:value="${alias.getAlias()}"type="text" th:name="alias" th:id="aliasID"/>
+    <input type="submit" th:value="Submit"/>
+</form>
+
+</body>
+</html>
