@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface EntryRepo extends CrudRepository<Entry, Long> {
   List<Entry> findAll();
-
   Entry findAllById(Long id);
+  Entry findByAlias(String alias);
 }

@@ -65,7 +65,12 @@ public class EntryServiceImp implements IEntryService {
     } else return false;
   }
 
-@Override
+  @Override
+  public Entry findByAlias(String alias) {
+    return null;
+  }
+
+/*@Override
   public Entry findByAlias(String alias) {
     List<Entry> entryList = new ArrayList<>();
     entryRepo.findAll().forEach(entryList::add);
@@ -75,5 +80,7 @@ public class EntryServiceImp implements IEntryService {
       }
     }
     return null;
-  }
+  }*/
+
+
 }
