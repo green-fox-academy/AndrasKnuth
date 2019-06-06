@@ -67,7 +67,7 @@ public class EntryServiceImp implements IEntryService {
 
   @Override
   public Entry findByAlias(String alias) {
-    return null;
+    return entryRepo.findByAlias(alias);
   }
 
 /*@Override

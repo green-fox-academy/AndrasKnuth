@@ -1,5 +1,4 @@
 package com.orientationexample.exam.controller;
-
 import com.orientationexample.exam.model.Entry;
 import com.orientationexample.exam.services.EntryServiceImp;
 import org.springframework.http.HttpStatus;
@@ -40,7 +39,7 @@ public class MainController {
   }
 
   @GetMapping("/a/{alias}")
-  public Object goToUrl(String alias) {
+  public Object goToUrl(@PathVariable(value = "alias") String alias) {
     Entry usedEntry = entryServiceImp.findByAlias(alias);
     if (usedEntry != null) {
       usedEntry.incrementHitCount();
@@ -50,16 +49,4 @@ public class MainController {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
   }
-
-  /*@GetMapping("/a/{alias}")
-  public Object goToAlias(@PathVariable(value = "alias") String alias) {
-    Entry currentEntry = entryServiceImp.findByAlias(alias);
-    if (currentEntry != null) {
-      currentEntry.incrementHitCount();
-      entryServiceImp.save(currentEntry);
-      return "redirect:" + currentEntry.getUrl();
-    } else {
-      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-  }*/
 }
