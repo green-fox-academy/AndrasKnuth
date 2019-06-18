@@ -1,17 +1,16 @@
-package greenfox.backend.application;
+package com.vogella.retrofitgerrit;
 
-import greenfox.backend.application.controllers.Controller;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class RetrofitgerritApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
+    SpringApplication.run(RetrofitgerritApplication.class, args);
     Controller controller = new Controller();
     controller.start();
-  }
 
+  }
 
 }
