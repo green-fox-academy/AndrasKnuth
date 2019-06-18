@@ -36,8 +36,8 @@ public class Controller {
     } else if (title == null) {
       return new Error("Please provide a title!");
     } else {
-      return new Message("Oh, hi there Mark, my dear student!"/*
-      <- This is for testing purposes, normal here: messageService.welcome_message(name, title)*/);
+      return new Message(/* Test works with this: "Oh, hi there Petike, my dear student!"*/
+       messageService.welcome_message(name, title));
     }
   }
 

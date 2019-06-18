@@ -1,6 +1,5 @@
 package com.restexercise.restexercise.models;
 
-
 public class Number {
 
   private int result;
@@ -11,7 +10,6 @@ public class Number {
   public Number(int result) {
     this.result = result;
   }
-
 
   public int getResult() {
     return result;

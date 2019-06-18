@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 public class NumberService {
   private String error;
 
-
   public Number doubling(int myNumber){
     return new Number(myNumber*2);
   }

@@ -10,6 +10,7 @@
 </span> and your secret code is <span th:text="${alias.getSecretCode()}"></span>.</p>
 <p class="alias-warning" th:if="${existingAlias}">Your alias is already in use!</p>
 
+
 <form th:action="@{/save-link}" method="post">
     <label th:for="url">Url: </label>
     <input th:value="${alias.getUrl()}" type="text" th:name="url" th:id="urlID"/><br>
