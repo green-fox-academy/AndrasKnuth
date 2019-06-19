@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Login page #</title>
+  <link rel="stylesheet" th:href="@{/static/style.css}" />
+  <meta charset="utf-8" />
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="mx-auto" style="width: 800px;">
+  <h1> Login with existing user </h1> <br> <br>
+
+  <form th:action="'http://localhost:8080/login'" th:method="post">
+
+    <label>
+      <input type="text"
+             id="userName"
+             name="userName"
+             placeholder=" Your username "
+             required>
+      Username </label> <br>
+
+    <label>
+      <input type="text"
+             id="password"
+             name="password"
+             placeholder=" Your password "
+             required>
+      Password </label> <br>
+
+
+    <button type="submit" class="btn btn-outline-warning btn-lg"> Register </button> <br> <br>
+  </form>
+
+
+  <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>

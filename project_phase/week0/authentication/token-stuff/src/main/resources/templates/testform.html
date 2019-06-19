@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Thymeleaf Exercise #</title>
+  <link rel="stylesheet" th:href="@{/static/style.css}" />
+  <meta charset="utf-8" />
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="box col-md-6 col-md-offset-3">
+      <p/>
+      <form method="post" th:action="@{/jwt-csrf-form}">
+        <input type="submit" class="btn btn-primary" value="Click Me!"/>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
