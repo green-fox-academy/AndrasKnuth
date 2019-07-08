@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class BaseController {
 
   @ResponseStatus(HttpStatus.BAD_REQUEST)
-  @ExceptionHandler({ SignatureException.class, MalformedJwtException.class, JwtException.class })
+  @ExceptionHandler({SignatureException.class, MalformedJwtException.class, JwtException.class})
   public JwtResponse exception(Exception e) {
     JwtResponse response = new JwtResponse();
     response.setStatus(JwtResponse.Status.ERROR);

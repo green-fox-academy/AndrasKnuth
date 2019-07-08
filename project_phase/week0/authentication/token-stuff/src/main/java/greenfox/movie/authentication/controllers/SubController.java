@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SubController {
 
   @GetMapping("/jwt-csrf-form")
-  public String subTest () {
+  public String subTest() {
     return "testform";
   }
 }

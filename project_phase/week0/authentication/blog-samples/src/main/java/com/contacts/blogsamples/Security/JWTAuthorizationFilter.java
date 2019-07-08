@@ -3,6 +3,7 @@ package com.contacts.blogsamples.Security;
 import static com.contacts.blogsamples.Security.SecurityConstants.HEADER_STRING;
 import static com.contacts.blogsamples.Security.SecurityConstants.TOKEN_PREFIX;
 import static com.contacts.blogsamples.Security.SecurityConstants.SECRET;
+
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
+
   public JWTAuthorizationFilter(AuthenticationManager authManager) {
     super(authManager);
   }

@@ -27,12 +27,12 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
   private AuthenticationManager authenticationManager;
 
-  public JWTAuthenticationFilter (AuthenticationManager authenticationManager){
+  public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
     this.authenticationManager = authenticationManager;
   }
 
   @Override
-  public Authentication attemptAuthentication (HttpServletRequest req, HttpServletResponse res)
+  public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
       throws AuthenticationException {
     try {
       ApplicationUser creds = new ObjectMapper()

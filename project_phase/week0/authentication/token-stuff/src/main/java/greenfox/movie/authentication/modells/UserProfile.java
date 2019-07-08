@@ -18,7 +18,7 @@ public class UserProfile {
   private String userName;
   private String password;
 
-  public UserProfile(){
+  public UserProfile() {
 
   }
 

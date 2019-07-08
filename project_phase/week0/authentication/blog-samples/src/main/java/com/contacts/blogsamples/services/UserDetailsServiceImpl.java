@@ -1,6 +1,7 @@
 package com.contacts.blogsamples.services;
 
 import static java.util.Collections.emptyList;
+
 import com.contacts.blogsamples.modells.ApplicationUser;
 import com.contacts.blogsamples.repo.ApplicationUserRepository;
 import org.springframework.security.core.userdetails.User;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+
   private ApplicationUserRepository applicationUserRepository;
 
   public UserDetailsServiceImpl(ApplicationUserRepository applicationUserRepository) {

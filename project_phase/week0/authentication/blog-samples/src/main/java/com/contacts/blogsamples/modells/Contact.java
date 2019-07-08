@@ -9,15 +9,16 @@ import lombok.Setter;
 @Getter
 @Entity
 public class Contact {
+
   @Id
   public String name;
   public String phone;
 
-  public Contact(){
+  public Contact() {
 
   }
 
-  public Contact (String name, String phone){
+  public Contact(String name, String phone) {
     this.name = name;
     this.phone = phone;
   }

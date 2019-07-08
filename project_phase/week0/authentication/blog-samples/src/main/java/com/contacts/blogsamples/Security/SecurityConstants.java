@@ -1,6 +1,7 @@
 package com.contacts.blogsamples.Security;
 
 public class SecurityConstants {
+
   public static final String SECRET = "SecretKeyToGenJWTs";
   public static final long EXPIRATION_TIME = 600_000; // 10 days
   public static final String TOKEN_PREFIX = "Bearer ";

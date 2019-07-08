@@ -38,7 +38,7 @@ public class RegController {
   }
 
   @PostMapping("/register")
-  public String doRegistration (String userName, String password) {
+  public String doRegistration(String userName, String password) {
     if (!iUserRepository.existsByUserName(userName)) {
       iUserRepository.save(new UserProfile(userName, password));
     }
@@ -46,11 +46,12 @@ public class RegController {
   }
 
   @PostMapping("login")
-  public String doLogin (String userName, String password) {
+  public String doLogin(String userName, String password) {
     String myToken;
     if (iUserRepository.findByUserName(userName).getPassword().equals(password)) {
-      myToken = JWTGenerate.createJWT(String.valueOf(iUserRepository.findByUserName(userName).getId()),
-          "FBI", userName);
+      myToken = JWTGenerate
+          .createJWT(String.valueOf(iUserRepository.findByUserName(userName).getId()),
+              "FBI", userName);
       iAccProfileRepository.save(userAccountService.uaBuilder(JWTGenerate.decodeJWT(myToken)));
 
       System.out.println(myToken);
@@ -59,15 +60,17 @@ public class RegController {
     return "index";
   }
 
-  @PostMapping ("/secret")
+  @PostMapping("/secret")
   public String shareSecret(@RequestBody AccProfile userAccount) {
     Date date = new Date();
-    Timestamp ts= new Timestamp(date.getTime());
+    Timestamp ts = new Timestamp(date.getTime());
     if (iAccProfileRepository.existsByJti(userAccount.getJti())) {
-      if (date.getTime() < iAccProfileRepository.findByJti(userAccount.getJti()).getExp().getTime()) {
+      if (date.getTime() < iAccProfileRepository.findByJti(userAccount.getJti()).getExp()
+          .getTime()) {
         return "valid";
       }
-    } return "invalid";
+    }
+    return "invalid";
   }
 
 }

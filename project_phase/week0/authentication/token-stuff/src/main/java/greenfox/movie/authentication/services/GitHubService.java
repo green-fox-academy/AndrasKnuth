@@ -15,6 +15,7 @@ import java.util.List;
 
 @Service
 public class GitHubService implements APIConfiguration {
+
   private String accessToken;
 
   private RepositoryInterface service;
@@ -44,7 +45,8 @@ public class GitHubService implements APIConfiguration {
 
 
   public Repository createRepository(Repository repo) throws IOException {
-    Call<Repository> retrofitCall = service.createRepo(repo, accessToken, API_VERSION_SPEC, JSON_CONTENT_TYPE);
+    Call<Repository> retrofitCall = service
+        .createRepo(repo, accessToken, API_VERSION_SPEC, JSON_CONTENT_TYPE);
 
     Response<Repository> response = retrofitCall.execute();
 
@@ -57,7 +59,8 @@ public class GitHubService implements APIConfiguration {
   }
 
   public DeletePayload deleteRepository(String owner, String repoName) throws IOException {
-    Call<DeletePayload> retrofitCall = service.deleteRepo(accessToken, API_VERSION_SPEC, repoName, owner);
+    Call<DeletePayload> retrofitCall = service
+        .deleteRepo(accessToken, API_VERSION_SPEC, repoName, owner);
 
     Response<DeletePayload> response = retrofitCall.execute();
 

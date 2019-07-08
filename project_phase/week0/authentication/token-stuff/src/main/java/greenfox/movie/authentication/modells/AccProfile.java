@@ -19,7 +19,7 @@ public class AccProfile {
   private String iss;
   private Date exp;
 
-  public AccProfile(){
+  public AccProfile() {
   }
 
   public AccProfile(String jti, Date iat, String sub, String iss, Date exp) {

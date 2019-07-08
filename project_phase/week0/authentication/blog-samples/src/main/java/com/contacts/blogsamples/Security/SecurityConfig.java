@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
   @Value(value = "${auth0.apiAudience}")
   private String apiAudience;
   @Value(value = "${auth0.issuer}")

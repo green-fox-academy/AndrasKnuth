@@ -1,4 +1,5 @@
 package greenfox.movie.authentication;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -9,6 +10,7 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
 public class JWTGenerate {
+
   private static final String SECRET_KEY = "itisasecretiguessitisasecretiguessitisasecretiguess"
       + "itisasecretiguessitisasecretiguessitisasecretiguessitisasecretiguessitisasecretiguess";
 
@@ -29,7 +31,7 @@ public class JWTGenerate {
         .setIssuedAt(now)
         .setSubject(subject)
         .setIssuer(issuer)
-        .setExpiration(new Date(System.currentTimeMillis() + (1000*30)))
+        .setExpiration(new Date(System.currentTimeMillis() + (1000 * 30)))
         .signWith(signatureAlgorithm, signingKey);
 
     //Builds the JWT and serializes it to a compact, URL-safe string

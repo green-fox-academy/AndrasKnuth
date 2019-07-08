@@ -12,12 +12,14 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface RepositoryInterface {
+
   @GET("user/repos")
   Call<List<Repository>> listRepos(@Header("Authorization") String accessToken,
       @Header("Accept") String apiVersionSpec);
 
   @DELETE("repos/{owner}/{repo}")
-  Call<DeletePayload> deleteRepo(@Header("Authorization") String accessToken, @Header("Accept") String apiVersionSpec,
+  Call<DeletePayload> deleteRepo(@Header("Authorization") String accessToken,
+      @Header("Accept") String apiVersionSpec,
       @Path("repo") String repo, @Path("owner") String owner);
 
   @POST("user/repos")

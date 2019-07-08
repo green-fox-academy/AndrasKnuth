@@ -11,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Weather {
+
   @SerializedName("TEMPERATURE")
   private Float temperature;
   @SerializedName("TWD")
